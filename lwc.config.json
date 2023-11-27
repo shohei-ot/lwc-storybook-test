@@ -1,0 +1,10 @@
+{
+  "modules": [
+    {
+      "dir": "src"
+    },
+    {
+      "dir": "stories"
+    }
+  ]
+}

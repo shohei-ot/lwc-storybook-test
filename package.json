@@ -1,0 +1,65 @@
+{
+  "name": "lwc-storybook-test",
+  "type": "module",
+  "devDependencies": {
+    "@babel/preset-env": "^7.23.3",
+    "@babel/preset-typescript": "^7.23.3",
+    "@lwc/rollup-plugin": "^5.1.0",
+    "@lwc/synthetic-shadow": "^5.1.0",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-replace": "^5.0.5",
+    "@storybook/addon-essentials": "^7.5.3",
+    "@storybook/addon-links": "^7.5.3",
+    "@storybook/blocks": "^7.5.3",
+    "@storybook/html": "^7.5.3",
+    "@storybook/html-webpack5": "^7.5.3",
+    "@storybook/web-components": "^7.5.3",
+    "@storybook/web-components-webpack5": "^7.5.3",
+    "@typescript-eslint/eslint-plugin": "^6.12.0",
+    "@typescript-eslint/parser": "^6.12.0",
+    "eslint": "^8.54.0",
+    "eslint-plugin-storybook": "^0.6.15",
+    "lint-staged": "^15.1.0",
+    "lit": "^3.1.0",
+    "lit-html": "^3.1.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rollup": "^4.6.0",
+    "storybook": "^7.5.3",
+    "web-component-analyzer": "^2.0.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "lwc": "^5.1.0"
+  },
+  "lint-staged": {
+    "*.{ts,js}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.json": [
+      "prettier --write"
+    ]
+  },
+  "volta": {
+    "node": "18.18.0"
+  },
+  "scripts": {
+    "storybook": "pnpm run storybook:prepare && run-p storybook:compile-lwc-watch storybook:start-no-open",
+    "storybook:build": "pnpm run storybook:prepare && pnpm storybook:compile-lwc",
+    "storybook:prepare": "run-p storybook:prepare:*",
+    "storybook:prepare:meta": "web-component-analyzer src --outFiles .storybook/build/custom-elements.json",
+    "storybook:prepare:meta-doc": "web-component-analyzer src --format markdown --outFiles .storybook/build/documentation.md",
+    "storybook:prepare:meta-vs": "web-component-analyzer src --format vscode --outFiles .storybook/build/vscode-html-custom-data.json",
+    "storybook:compile-lwc": "rollup --bundleConfigAsCjs -c ./.storybook/rollup.config.mjs",
+    "storybook:compile-lwc-watch": "rollup --bundleConfigAsCjs -c ./.storybook/rollup.config.mjs -w",
+    "storybook:start": "storybook dev -s ./dist -p 6006",
+    "storybook:start-no-open": "storybook dev -s ./dist -p 6006 --no-open",
+    "build-storybook": "storybook build -s ./dist"
+  }
+}
