@@ -3,6 +3,7 @@ import fs from 'fs';
 import lwcRollupPlugin from '@lwc/rollup-plugin'
 import rollupNodeResolve from '@rollup/plugin-node-resolve'
 import rollupCommonjs from '@rollup/plugin-commonjs'
+import replace from '@rollup/plugin-replace'
 
 import syntheticShadow from './plugins/synthetic-shadow.mjs'
 
@@ -25,6 +26,9 @@ export default {
     format:'esm',
   },
   plugins: [
+    replace({
+      'process.env.NODE_ENV': JSON.stringify('development'),
+    }),
     syntheticShadow(),
     lwcRollupPlugin({
       modules: lwcConfigJsonEffective
