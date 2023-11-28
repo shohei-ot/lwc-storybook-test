@@ -19,6 +19,9 @@ devDependencies:
   '@babel/preset-typescript':
     specifier: ^7.23.3
     version: 7.23.3(@babel/core@7.23.3)
+  '@lwc/engine-dom':
+    specifier: ^5.1.0
+    version: 5.1.0
   '@lwc/rollup-plugin':
     specifier: ^5.1.0
     version: 5.1.0(rollup@4.6.0)
@@ -1889,7 +1892,6 @@ packages:
 
   /@lwc/engine-dom@5.1.0:
     resolution: {integrity: sha512-2OziJoVEwe+esiK8avxGuQpFBPE9UERkmZonGW+lBp3DirGazQKvYJF3scSk4zg+fSgHSg5n06trlxFsI3uJBA==}
-    dev: false
 
   /@lwc/engine-server@5.1.0:
     resolution: {integrity: sha512-/HwLs0ohxmf7GaNPZrKcc/KHzMQ7+lbUpwyGWVdOWMSgdTbZuDJkaQ9Ax+pD0+dsBDSvAISPKbdOEASTj/jVEQ==}

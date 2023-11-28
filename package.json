@@ -4,6 +4,7 @@
   "devDependencies": {
     "@babel/preset-env": "^7.23.3",
     "@babel/preset-typescript": "^7.23.3",
+    "@lwc/engine-dom": "^5.1.0",
     "@lwc/rollup-plugin": "^5.1.0",
     "@lwc/synthetic-shadow": "^5.1.0",
     "@rollup/plugin-commonjs": "^25.0.7",
