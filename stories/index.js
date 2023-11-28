@@ -3,5 +3,8 @@
 import HelloWorld from 'c/helloWorld';
 import MyButton from 'c/myButton';
 
+import WcMyButtonSlot from 'wc/myButtonSlot';
+
 customElements.define('c-hello-world', HelloWorld.CustomElementConstructor);
 customElements.define('c-my-button', MyButton.CustomElementConstructor);
+customElements.define('wc-my-button-slot', WcMyButtonSlot.CustomElementConstructor);

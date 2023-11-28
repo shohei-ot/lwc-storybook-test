@@ -1,5 +1,8 @@
 import { LightningElement, api } from "lwc";
 
+/**
+ * @slot - this component supports an unnamed slot
+ */
 export default class MyButton extends LightningElement {
 
   /**
@@ -11,4 +14,12 @@ export default class MyButton extends LightningElement {
    */
   @api
   type = 'button';
+
+  handleClick(e) {
+    e.preventDefault();
+    const event = new CustomEvent('myclick');
+    this.dispatchEvent(event);
+  }
 }
+
+//customElements.define('c-my-button', MyButton.CustomElementConstructor);

@@ -5,4 +5,4 @@ export default class HelloWorld extends LightningElement {
   name = 'User';
 }
 
-// customElements.define('hello-world', HelloWorld.CustomElementConstructor);
+//customElements.define('hello-world', HelloWorld.CustomElementConstructor);
