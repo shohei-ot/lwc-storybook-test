@@ -31,7 +31,8 @@
     "react-dom": "^18.2.0",
     "rollup": "^4.6.0",
     "storybook": "^7.5.3",
-    "web-component-analyzer": "^2.0.0"
+    "web-component-analyzer": "^2.0.0",
+    "husky": "^8.0.0"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
@@ -62,6 +63,8 @@
     "storybook:compile-lwc-watch": "rollup --bundleConfigAsCjs -c ./.storybook/rollup.config.mjs -w",
     "storybook:start": "storybook dev -s ./dist -p 6006",
     "storybook:start-no-open": "storybook dev -s ./dist -p 6006 --no-open",
-    "build-storybook": "storybook build -s ./dist"
+    "build-storybook": "storybook build -s ./dist",
+    "prepare": "husky install",
+    "lint-staged": "lint-staged"
   }
 }
